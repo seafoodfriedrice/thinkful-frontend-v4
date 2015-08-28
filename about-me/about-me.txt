@@ -1,0 +1,21 @@
+Describe yourself in two to three sentences.
+	I'm a Systems Engineer that works primarily with Linux-based systems.
+	Although I have the ability to manage Windows systems, I prefer not
+	to unless I'm using PowerShell.
+
+What's important to you?
+	Life-long learning. Leveling up any and all skills, whether they be
+	hobbies or work related.
+
+Where are you from?
+	From Hawaii and currently working in Abu Dhabi for the past year.
+
+What are your favorite hobbies?
+	Linux. Python. Cello. Working out.
+
+What's your dream job?
+	The one I have now. Working overseas for a small, yet fast growing
+	company.
+
+What music have you been listening to lately?
+	Classical. Tchaikovsky radio on Pandora.
