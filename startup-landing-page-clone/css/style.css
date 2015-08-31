@@ -446,3 +446,7 @@ div {
     height: 70px;
     margin: 0 auto;
 }
+.logo {
+  margin-left: 8%;
+  margin-top: 18px;
+}
