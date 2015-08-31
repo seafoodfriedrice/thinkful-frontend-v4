@@ -440,6 +440,10 @@ div {
 /* Navigation */
 .top-navigation {
     background-color: #fff;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    color: #838994;
+    letter-spacing: 0.03em;
 }
 .top-navigation > .content {
     width: 970px;
