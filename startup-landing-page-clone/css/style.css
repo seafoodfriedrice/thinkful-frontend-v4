@@ -445,8 +445,11 @@ div {
     width: 970px;
     height: 70px;
     margin: 0 auto;
+    padding: 0 15px;
 }
 .logo {
-  margin-left: 8%;
   margin-top: 18px;
+}
+.links {
+  float: right;
 }
