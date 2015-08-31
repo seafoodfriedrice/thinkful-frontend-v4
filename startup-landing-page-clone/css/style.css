@@ -450,6 +450,7 @@ div {
 .logo {
   margin-top: 18px;
 }
-.links {
+.top-navigation .links li {
   float: right;
+  display: inline-block;
 }
