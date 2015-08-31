@@ -425,3 +425,24 @@ td,
 th {
   padding: 0;
 }
+
+/**
+ * Main
+ * ========================================================================== */
+
+body {
+  background-color: LightGray;
+}
+div {
+  border: 1px solid Chocolate;
+}
+
+/* Navigation */
+.top-navigation {
+    background-color: #fff;
+}
+.top-navigation > .content {
+    width: 970px;
+    height: 70px;
+    margin: 0 auto;
+}
