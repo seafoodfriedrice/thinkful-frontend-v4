@@ -438,6 +438,7 @@ html {
 }
 body {
   background-color: LightGray;
+  font-family: 'Roboto', sans-serif;
 }
 div {
   border: 1px solid Chocolate;
@@ -447,12 +448,14 @@ div {
 .top-navigation {
     background-color: #fff;
 }
-.top-navigation > .content {
+.top-navigation > .content,
+.content {
     width: 970px;
     height: 70px;
     margin: 0 auto;
     padding: 0 15px;
 }
+
 .logo {
   margin-top: 18px;
   margin-left: 14px;
@@ -484,4 +487,29 @@ div {
     background-repeat: no-repeat;
     background-size: cover;
     height: 41.5rem;
+    color: #fff;
+    text-align: center;
+}
+.introduction > .content {
+    padding-top: 200px;
+}
+.introduction h1,
+.introduction h3 {
+  font-weight: 100;
+  margin: 14px 0;
+}
+.introduction h1 {
+  font-size: 3em;
+}
+.introduction h3 {
+  font-size: 1.6em;
+}
+.big-button {
+  text-shadow: none;
+  border-style: none;
+  border-radius: 4px;
+  padding: 16px 26px;
+  line-height: 1.33;
+  margin: 5px;
+  background-color: #f15a29;
 }
