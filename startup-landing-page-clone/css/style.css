@@ -431,6 +431,10 @@ th {
  * ========================================================================== */
 html {
   -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
 }
 body {
   background-color: LightGray;
@@ -468,4 +472,8 @@ div {
 .top-navigation .links > .active {
   color: #4c5058;
   font-weight: 500;
+}
+.top-navigation .links li:hover {
+  cursor: pointer;
+  color: #333333;
 }
