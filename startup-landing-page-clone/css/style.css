@@ -477,3 +477,11 @@ div {
   cursor: pointer;
   color: #333333;
 }
+
+.introduction {
+    background-image: url('../images/karma-bg.jpg');
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 41.5rem;
+}
