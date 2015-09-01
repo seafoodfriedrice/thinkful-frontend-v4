@@ -429,7 +429,9 @@ th {
 /**
  * Main
  * ========================================================================== */
-
+html {
+  -webkit-font-smoothing: antialiased;
+}
 body {
   background-color: LightGray;
 }
@@ -453,6 +455,7 @@ div {
 }
 .top-navigation .links li {
   display: inline-block;
+  margin-left: 25px;
 }
 .top-navigation .links {
   float: right;
