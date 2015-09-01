@@ -448,16 +448,17 @@ div {
 .top-navigation {
     background-color: #fff;
 }
-.top-navigation > .content,
+.top-navigation > .content {
+  height: 70px;
+}
 .content {
     width: 970px;
-    height: 70px;
     margin: 0 auto;
     padding: 0 15px;
 }
 
 .logo {
-  margin-top: 18px;
+  margin-top: 16px;
   margin-left: 14px;
 }
 .top-navigation .links li {
@@ -489,9 +490,10 @@ div {
     height: 41.5rem;
     color: #fff;
     text-align: center;
+    overflow: auto;
 }
 .introduction > .content {
-    padding-top: 200px;
+    margin-top: 200px;
 }
 .introduction h1,
 .introduction h3 {
