@@ -512,6 +512,8 @@ div {
   border-radius: 4px;
   padding: 16px 26px;
   line-height: 1.33;
-  margin: 5px;
+  margin: 7px;
   background-color: #f15a29;
+  width: 155px;
+  font-size: 1.1em;
 }
