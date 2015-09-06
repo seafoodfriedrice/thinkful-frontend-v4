@@ -544,7 +544,7 @@ div {
 }
 
 footer {
-  margin-top: 135px;
+  margin: 135px 0;
 }
 footer hr {
   border: 0;
