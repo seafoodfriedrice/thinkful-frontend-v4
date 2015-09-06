@@ -437,7 +437,8 @@ html {
   box-sizing: inherit;
 }
 body {
-  background-color: LightGray;
+  /* background-color: LightGray; */
+  background-color: white;
   font-family: 'Roboto', sans-serif;
 }
 div {
@@ -539,4 +540,46 @@ div {
 .caption {
   margin-top: 35px;
   font-size: 1.5em;
+}
+
+footer {
+  margin-top: 135px;
+}
+footer hr {
+  border: 0;
+  border-top: 1px solid lightgray;
+}
+footer h5 {
+  font-size: 1.0em;
+  font-weight: 400;
+  margin: 18px 0;
+}
+footer > .content {
+  background-color: #fff;
+  text-align: center;
+}
+.icons {
+  padding: 0;
+}
+.content .icons > li {
+  display: inline-block;
+  border: 1px solid lightgray;
+  padding: 0.6em 0.9em;
+  margin: 0em 0.25em;
+  width: 42px;
+  border-radius: 37px;
+}
+.fa-twitter {
+  color: #74b6ef;
+}
+.fa-facebook {
+  color: #326999;
+}
+.fa-instagram {
+  color: #496f90;
+}
+.copyright {
+  color: #868686;
+  font-weight: 300;
+  font-size: 0.95em;
 }
