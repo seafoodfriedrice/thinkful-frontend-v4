@@ -490,13 +490,13 @@ div {
     background-position: center bottom;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 41.5rem;
+    height: 45.5rem;
     color: #fff;
     text-align: center;
     overflow: auto;
 }
 .introduction > .content {
-    margin-top: 200px;
+    margin-top: 280px;
 }
 .introduction h1,
 .introduction h3 {
