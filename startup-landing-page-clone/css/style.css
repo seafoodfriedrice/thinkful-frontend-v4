@@ -441,7 +441,7 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 div {
-  border: 1px solid Chocolate;
+  /* border: 1px solid Chocolate; */
 }
 
 /* Navigation */
@@ -516,4 +516,24 @@ div {
   background-color: #f15a29;
   width: 155px;
   font-size: 1.1em;
+}
+
+.cases {
+  text-align: center;
+  background-color: #fff;
+}
+.cases .devices {
+  width: 33%;
+  display: inline-block;
+  /* border: 1px solid black; */
+  box-sizing: border-box;
+}
+.content > h2 {
+  padding-top: 115px;
+  font-size: 2.8em;
+  font-weight: 100;
+}
+.caption {
+  margin-top: 35px;
+  font-size: 1.5em;
 }
