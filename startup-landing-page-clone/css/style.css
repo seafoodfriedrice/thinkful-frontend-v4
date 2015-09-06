@@ -451,6 +451,7 @@ div {
     position: fixed;
     width: 100%;
     z-index: 9999;
+    border-bottom: 1px solid lightgray;
 }
 .top-navigation > .content {
   height: 70px;
