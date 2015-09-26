@@ -21,7 +21,6 @@ header {
 
 i.fa-shopping-cart {
   color: #8f1e1e;
-  /* color: #59956f; */
   font-size: 6.4em;
   padding: 15px;
   background-color: #bbdefb;
@@ -46,14 +45,25 @@ h1 {
   width: 760px;
 }
 
+.input-item {
+  margin: 24px 0;
+  width: 747px;
+  border: none;
+  border-bottom: 2px solid #d4d4d4;
+  padding: 6px;
+  background-color: transparent;
+}
+
+.input-item:focus {
+  outline: 0;
+}
+
 ul {
   list-style-type: none;
   padding: 0;
 }
 
 li {
-  /* color: #288fb4; */
-  /* color: #8f1e1e; */
   background-color: #fff;
   padding: 24px;
   margin: 4px 0;
@@ -66,12 +76,17 @@ li:hover {
   box-shadow: 0 5px 10px rgba(0,0,0,0.19), 0 2px 2px rgba(0,0,0,0.23);
 }
 
-i.fa-check {
-  font-size: 1.2em;
+li:hover > .item {
+  color: #000;
 }
 
-.check-hidden, .check {
+i.fa-check {
+  font-size: 1.2em;
   margin-right: 12px;
+}
+
+.fa-check {
+  color: #288fb4;
 }
 
 .check-hidden {
@@ -82,8 +97,8 @@ i.fa-check {
   color: #686868;
 }
 
-.check {
-  color: #288fb4
+.line-through {
+  text-decoration: line-through;
 }
 
 .item-checked {
@@ -94,4 +109,13 @@ i.fa-check {
 .close {
   color: lightgray;
   float: right;
+}
+
+.close:hover {
+  color: #8f1e1e;
+}
+
+.item, .item-checked, .close {
+  cursor: pointer;
+  cursor: hand;
 }
