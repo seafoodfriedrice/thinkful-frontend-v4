@@ -19,4 +19,10 @@ $(document).ready(function() {
     }
   });
 
+  $(".close").on("click", function() {
+    $(this).parent().fadeOut(1600, function() {
+      $(this).remove();
+    });
+  });
+
 });
