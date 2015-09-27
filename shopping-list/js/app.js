@@ -20,9 +20,20 @@ $(document).ready(function() {
   });
 
   $(".close").on("click", function() {
-    $(this).parent().fadeOut(1600, function() {
+    $(this).parent().fadeOut(400, function() {
       $(this).remove();
     });
+  });
+
+  function addItem() {
+    var item = $(".input-item").val()
+    alert(item);
+  }
+
+  $(".input-item").keydown(function(e) {
+    if (e.which == 13 && $(this).val().length >= 2) {
+      addItem();
+    }
   });
 
 });
