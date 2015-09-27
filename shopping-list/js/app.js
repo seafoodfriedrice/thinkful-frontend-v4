@@ -5,13 +5,15 @@ $(document).ready(function() {
     $(this).parent().find(".fa-check").toggleClass("check-hidden");
   });
 
-  $(".item").hover(function() {
+  $(document).on("mouseenter", ".item", function() {
     if ($(this).hasClass("item-checked")) {
       $(this).parent().find(".fa-check").css("color", "#efddb2");
     } else {
       $(this).parent().find(".fa-check").css("color", "#288fb4");
     }
-  }, function() {
+  });
+  
+  $(document).on("mouseleave", ".item", function() {
     if ($(this).hasClass("item-checked")) {
       $(this).parent().find(".fa-check").css("color", "#288fb4");
     } else {
