@@ -21,7 +21,7 @@ $(document).ready(function() {
     }
   });
 
-  $(".close").on("click", function() {
+  $(document).on("click", ".close", function() {
     $(this).parent().fadeOut(400, function() {
       $(this).remove();
     });
@@ -40,6 +40,5 @@ $(document).ready(function() {
       addItem();
     }
   });
-
 
 });
