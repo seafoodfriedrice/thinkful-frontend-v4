@@ -31,6 +31,7 @@ $(document).ready(function() {
     var item = '<li><i class="fa fa-check check-hidden"></i>' +
         '<span class="item">' + $(".input-item").val() + '</span>' +
         '<i class="fa fa-close close"></i></li>';
+    item = $(item).hide().fadeIn(400);
     $("#items").append(item);
     $(".input-item").val("");
   }
