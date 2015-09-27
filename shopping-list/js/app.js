@@ -36,6 +36,11 @@ $(document).ready(function() {
     $(".input-box").val("");
   }
 
+  $(".input-plus").click(function() {
+    if ($(".input-box").val().length >= 2) {
+      addItem();
+    }
+  });
   $(".input-box").keydown(function(e) {
     if (e.which == 13 && $(this).val().length >= 2) {
       addItem();
