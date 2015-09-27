@@ -26,8 +26,11 @@ $(document).ready(function() {
   });
 
   function addItem() {
-    var item = $(".input-item").val()
-    alert(item);
+    var item = '<li><i class="fa fa-check check-hidden"></i>' +
+        '<span class="item">' + $(".input-item").val() + '</span>' +
+        '<i class="fa fa-close close"></i></li>';
+    $("#items").append(item);
+    $(".input-item").val("");
   }
 
   $(".input-item").keydown(function(e) {
@@ -35,5 +38,6 @@ $(document).ready(function() {
       addItem();
     }
   });
+
 
 });
