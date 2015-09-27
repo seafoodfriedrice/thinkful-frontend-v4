@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-  $("span").on("click", function() {
+  $(document).on("click", "span", function() {
     $(this).toggleClass("item-checked");
     $(this).parent().find(".fa-check").toggleClass("check-hidden");
   });
