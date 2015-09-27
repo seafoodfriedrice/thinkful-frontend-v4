@@ -29,14 +29,14 @@ $(document).ready(function() {
 
   function addItem() {
     var item = '<li><i class="fa fa-check check-hidden"></i>' +
-        '<span class="item">' + $(".input-item").val() + '</span>' +
+        '<span class="item">' + $(".input-box").val() + '</span>' +
         '<i class="fa fa-close close"></i></li>';
     item = $(item).hide().fadeIn(400);
     $("#items").append(item);
-    $(".input-item").val("");
+    $(".input-box").val("");
   }
 
-  $(".input-item").keydown(function(e) {
+  $(".input-box").keydown(function(e) {
     if (e.which == 13 && $(this).val().length >= 2) {
       addItem();
     }
