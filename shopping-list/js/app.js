@@ -3,25 +3,19 @@ $(document).ready(function() {
   $(document).on("click", "span", function() {
     $(this).toggleClass("item-checked");
     $(this).parent().find(".fa-check").toggleClass("check-hidden");
-  });
-
-  $(document).on("mouseenter", ".item", function() {
+  }).on("mouseenter", ".item", function() {
     if ($(this).hasClass("item-checked")) {
       $(this).parent().find(".fa-check").css("color", "#efddb2");
     } else {
       $(this).parent().find(".fa-check").css("color", "#288fb4");
     }
-  });
-  
-  $(document).on("mouseleave", ".item", function() {
+  }).on("mouseleave", ".item", function() {
     if ($(this).hasClass("item-checked")) {
       $(this).parent().find(".fa-check").css("color", "#288fb4");
     } else {
       $(this).parent().find(".fa-check").css("color", "#fff");
     }
-  });
-
-  $(document).on("click", ".close", function() {
+  }).on("click", ".close", function() {
     $(this).parent().fadeOut(400, function() {
       $(this).remove();
     });
