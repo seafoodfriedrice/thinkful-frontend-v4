@@ -39,10 +39,32 @@ h1 {
 }
 
 .answers {
-  border: 1px solid black;
   background-color: #fff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
   margin: auto;
   margin-top: 60px;
-  width: 560px;
-  height: 600px;
+  width: 390px;
+  padding: 8px 28px;
 }
+
+.answers-content {
+  font-size: 1.3em;
+}
+
+.answers-content li {
+  list-style-type: upper-alpha;
+  margin: 35px 0;
+  padding-left: 26px;
+  color: #686868;
+}
+
+li:hover {
+  color: #000;
+  margin-left: 2px;
+  cursor: pointer;
+}
+
+li > i {
+  float: right; 
+}
+
