@@ -27,13 +27,20 @@ $(document).ready(function() {
     }
   }
 
-  var q = "<strong>Question</strong>: ";
-  $(".question-content").html(q + quiz[2]["question"]);
-  var checkIconHtml = '<i class="fa fa-check"></i>';
-  $("ul").children().each(function(i, li) {
-    $(this).html(quiz[2]["answers"][i] + checkIconHtml);
-  });
+  var questionCount = 1;
 
+  var q = "<strong>Question</strong>: ";
+  function nextQuestion() {
+    $(".question-content").html(q + quiz[questionCount]["question"]);
+    $("ul").children().each(function(i, li) {
+      var checkIconHtml = '<i class="fa fa-check"></i>';
+      $(this).html(quiz[questionCount]["answers"][i] + checkIconHtml);
+    });
+    $("ul").removeClass("active");
+    if (questionCount == Object.keys(quiz).length) {
+      alert("End of quiz");
+    }
+  }
 
   $(".answers-content li").click(function() {
     $(".answers-content").addClass("active");
@@ -41,4 +48,18 @@ $(document).ready(function() {
     $(this).addClass("selected");
     var answer = $(this).text();
   });
+
+  $(document).on("click", ".submit-answer", function() {
+    var selected = $(".selected").text();
+    var correct = quiz[questionCount]["correct"];
+    var feedback = $(".answers-feedback");
+    if (selected == correct) {
+      feedback.text("That is correct!");
+    } else {
+      feedback.text("Sorry. The correct answer is " + correct + ".");
+    }
+    questionCount++;
+    nextQuestion();
+  });
+
 });
