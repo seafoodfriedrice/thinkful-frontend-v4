@@ -58,8 +58,19 @@ h1 {
   list-style-type: upper-alpha;
   margin: 35px 0;
   padding-left: 26px;
-  /* color: #606060; */
   color: #000;
+}
+
+.answers-content.active li {
+  color: lightgrey;
+}
+
+.answers-content.active .selected {
+  color: #ab3124;
+}
+
+.answers-content.active .selected > i.fa-check {
+  visibility: visible;
 }
 
 li:hover {
