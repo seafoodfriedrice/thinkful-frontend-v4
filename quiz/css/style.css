@@ -67,8 +67,12 @@ li:hover {
   cursor: pointer;
 }
 
-li > i {
+i.fa-check {
   float: right; 
+  visibility: hidden;
   color: #ab3124;
 }
 
+li:hover > i.fa-check {
+  visibility: visible;
+}
