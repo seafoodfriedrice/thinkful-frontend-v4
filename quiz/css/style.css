@@ -107,3 +107,11 @@ li:hover > i.fa-check {
      -moz-border-radius: 3;
 }
 
+.score-final {
+  margin-top: 67px;
+  display: none;
+  color: #d69830;
+  text-align: center;
+  font-size: 7.2em;
+  text-shadow: 1px 3px 0px #5f233f;
+}
