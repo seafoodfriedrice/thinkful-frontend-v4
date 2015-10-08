@@ -37,6 +37,7 @@ $(document).ready(function() {
       $(this).html(quiz[questionCount]["answers"][i] + checkIconHtml);
     });
     $("ul").removeClass("active");
+    $(".answers-feedback").text("Select an answer from below");
     if (questionCount == Object.keys(quiz).length) {
       alert("End of quiz");
     }
@@ -46,20 +47,26 @@ $(document).ready(function() {
     $(".answers-content").addClass("active");
     $("li").removeClass("selected");
     $(this).addClass("selected");
-    var answer = $(this).text();
   });
 
-  $(document).on("click", ".submit-answer", function() {
+  $(document).on("click", ".quiz-btn", function() {
     var selected = $(".selected").text();
     var correct = quiz[questionCount]["correct"];
     var feedback = $(".answers-feedback");
+    var button = $(".quiz-btn");
     if (selected == correct) {
       feedback.text("That is correct!");
     } else {
       feedback.text("Sorry. The correct answer is " + correct + ".");
     }
-    questionCount++;
-    nextQuestion();
+    if (button.hasClass("quiz-next")) {
+      button.text("Submit Answer");
+      questionCount++;
+      nextQuestion();
+    } else {
+      button.text("Next Question");
+    }
+    button.toggleClass("quiz-next");
   });
 
 });
