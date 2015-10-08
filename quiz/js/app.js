@@ -28,6 +28,7 @@ $(document).ready(function() {
   }
 
   var questionCount = 1;
+  var answersCorrect = 0;
 
   var q = "<strong>Question</strong>: ";
   function nextQuestion() {
@@ -51,24 +52,38 @@ $(document).ready(function() {
     var correct = quiz[questionCount]["correct"];
     var feedback = $(".answers-feedback");
     var button = $(".quiz-btn");
+    var quizLength = Object.keys(quiz).length;
+
+    if (button.text() == "Finish Quiz") {
+      $(".question-content").css("visibility", "hidden");
+      $(".answers-feedback").text("Your Score");
+      $(".answers-content").remove();
+      $(".score-header").show();
+      $(".score-final").text(answersCorrect + " / " + quizLength).show();
+      button.text("Play Again");
+      return
+    }
+
     if (selected == correct) {
       feedback.text("That is correct!");
+      if ($(this).text() == "Submit Answer") {
+        answersCorrect++;
+      }
     } else {
       feedback.text("Sorry. The correct answer is " + correct + ".");
     }
+
     if (button.hasClass("quiz-next")) {
-      button.text("Submit Answer");
       questionCount++;
-      if (questionCount == Object.keys(quiz).length) {
-        alert("End of quiz");
-      } else {
-        nextQuestion();
-      }
+      nextQuestion();
+      button.text("Submit Answer");
+    } else if (questionCount == quizLength) {
+      button.text("Finish Quiz");
     } else {
       button.text("Next Question");
     }
-    button.toggleClass("quiz-next");
 
+    button.toggleClass("quiz-next");
   });
 
 });
