@@ -38,9 +38,6 @@ $(document).ready(function() {
     });
     $("ul").removeClass("active");
     $(".answers-feedback").text("Select an answer from below");
-    if (questionCount == Object.keys(quiz).length) {
-      alert("End of quiz");
-    }
   }
 
   $(".answers-content li").click(function() {
@@ -62,11 +59,16 @@ $(document).ready(function() {
     if (button.hasClass("quiz-next")) {
       button.text("Submit Answer");
       questionCount++;
-      nextQuestion();
+      if (questionCount == Object.keys(quiz).length) {
+        alert("End of quiz");
+      } else {
+        nextQuestion();
+      }
     } else {
       button.text("Next Question");
     }
     button.toggleClass("quiz-next");
+
   });
 
 });
