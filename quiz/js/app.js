@@ -64,6 +64,11 @@ $(document).ready(function() {
       return
     }
 
+    if (button.text() == "Play Again") {
+      location.reload();
+      return
+    }
+
     if (selected == correct) {
       feedback.text("That is correct!");
       if ($(this).text() == "Submit Answer") {
