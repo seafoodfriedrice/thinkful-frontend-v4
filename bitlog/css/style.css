@@ -4,11 +4,15 @@
   #3e4a61 Medium Gray
   #1a2639 Dark Gray
   #fff07a Light Yellow
+
+  #607d8b
+  #455a64
 */
 
 body {
-  background-color: #eeeded;
+  color: #3e4a61;
   font-family: Roboto, sans-serif;
+  background-color: #eeeded;
 }
 
 /*
@@ -16,68 +20,127 @@ body {
 */
 header {
   margin: 0;
-  height: 110px;
+  height: 90px;
   text-align: center;
-  background-color: #1a2639;
+  background-color: #c24d2c;
   background-position: center top 0px;
   background-size: 344px;
   background-repeat: no-repeat;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)
 }
 
 h1 {
   margin: 0;
-  padding-top: 25px;
-  font-family: "Luckiest Guy", sans-serif;
+  padding-top: 10px;
+  font-family: "Fugaz One", sans-serif;
   font-size: 3em;
   font-weight: 200;
-  color: #fff07a;
-  /* text-shadow: 3px 3px 0px #5f233f; */
+  color: #d9dad7;
+  text-shadow: 2px 3px 0px #3e4a61;
 }
 
 .container {
   margin: auto;
   width: 760px;
-  padding-top: 48px;
+  padding-top: 15px;
 }
 
+/*
+ * All sections
+ */
 section {
-  margin-bottom: 30px;
+  margin-bottom: 10px;
   background-color: #fff;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
 
-/*
-  Dashboard
-*/
-section.chart {
-  margin-bottom: 10px;
+section .header {
+  margin-top: 10px;
+  padding-left: 16px;
+  text-align: center;
+  color: #c24d2c;
+  font-weight: 400;
 }
 
+/*
+ * Dashboard
+ */
 .chart-line {
   width: 760px;
   height: 300px;
 }
 
 section.funds, section.exchange {
-  text-align: center;
-  padding: 32px;
+  width: 375px;
+  height: 130px;
+  padding: 24px 0;
 }
 
 section.funds {
-  width: 310px;
   float: left;
 }
 
 section.exchange {
-  width: 310px;
   float: right;
+}
+
+
+.info-header,
+.info-body,
+.info-amount,
+.info-amount-usd, .info-amount-btc {
+  margin: 0;
+  padding: 0;
+}
+
+.info-header {
+  text-align: center;
+  color: #455a64;
+  font-weight: 400;
+}
+
+.info-body {
+  padding-top: 25px;
+  color: #455a64;
+  font-weight: bold;
+  font-size: 2.0em;
+}
+
+.info-amount {
+  width: 275px;
+  margin: auto;
+  text-align: right;
+  border-right: 5px solid #d9dad7;
+  padding-right: 25px;
+}
+
+.info-exchange {
+  margin-top: 15px;
+  text-align: center;
+  color: #3e4a61;
 }
 
 /*
   Log Transaction
 */
 section.log {
-  padding: 5px;
+  padding-top: 5px;
+  padding-bottom: 40px;
+  clear: both;
+}
+
+.log-inputs {
+  margin: 0 15px;
+}
+.log-input {
+  border: none;
+  border-bottom: 2px solid #d4d4d4;
+  background-color: transparent;
+}
+
+.log-input:focus {
+  outline: 0;
+  border-bottom: 2px solid #3e4a61;
 }
 
 .log-date {
@@ -85,11 +148,15 @@ section.log {
 }
 
 .log-description {
-  width: 435px;
+  width: 360px;
 }
 
 .log-currency {
   width: 80px;
+}
+
+.log-button {
+  width: 90px;
 }
 
 /*
@@ -101,9 +168,27 @@ section.history {
 
 table {
   width: 100%;
+  margin-bottom: 15px;
+}
+
+th, td {
+  padding: 12px;
+}
+
+th {
+  text-align: left;
+  font-weight: 400;
+  border-bottom: 2px solid #d9dad7;
 }
 
 td {
-  padding: 5px;
-  border-top: 1px solid black;
+  border-top: 1px solid #d9dad7;
+}
+
+th:first-child, td:first-child {
+  padding-left: 40px;
+}
+
+td:last-child {
+  padding-right: 40px;
 }

@@ -4,7 +4,9 @@
   <meta charset="UTF-8">
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href='https://fonts.googleapis.com/css?family=Roboto'>
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link rel="stylesheet"
+        href='https://fonts.googleapis.com/css?family=Roboto|Fugaz One'>
   <script src="https://code.jquery.com/jquery.min.js"></script>
   <script src="http://code.highcharts.com/highcharts.js"></script>
   <script src="js/app.js"></script>
@@ -12,32 +14,45 @@
 </head>
 <body>
   <header>
-    <h1>BitLog</h1>
+    <h1>&gt;BitLog</h1>
   </header>
   <div class="container">
     <section class="chart">
       <div class="chart-line"></div>
     </section>
     <section class="funds">
-      <div class="funds-amount">$500.00 Remaining</div>
+      <div class="funds-amount">
+        <h3 class="info-header">FUNDS REMAINING</h3>
+        <div class="info-body info-amount">
+          1.9106 BTC<br />
+          500.00 USD
+        </div>
+      </div>
     </section>
     <section class="exchange">
-      <div class="exchange-rate">1 BTC - $265.11 USD</div>
+      <div class="exchange-rate">
+        <h3 class="info-header">EXCHANGE RATE</h3>
+        <div class="info-body info-exchange">
+          1 BTC <i class="fa fa-random"></i> 265.11 USD
+        </div>
+      </div>
     </section>
-    <h2>Log Transaction</h2>
     <section class="log">
-      <input class="log-date" name="input" type="text"
-            placeholder="Date">
-      <input class="log-description" name="input" type="text"
-            placeholder="Type here to enter item">
-      <input class="log-currency" name="input" type="text"
-            placeholder="USD">
-      <input class="log-currency" name="input" type="text"
-            placeholder="BTC">
-      <input class="log-button" type="submit" value="Log">
+      <h2 class="header">LOG TRANSACTION</h2>
+      <div class="log-inputs">
+        <input class="log-input log-date" name="input" type="text"
+              placeholder="Date">
+        <input class="log-input log-description" name="input" type="text"
+              placeholder="Enter description here">
+        <input class="log-input log-currency" name="input" type="text"
+              placeholder="USD">
+        <input class="log-input log-currency" name="input" type="text"
+              placeholder="BTC">
+        <input class="log-button" type="submit" value="Log">
+      </div>
     </section>
-    <h2>Transaction History</h2>
     <section class="history">
+      <h2 class="header">TRANSACTION HISTORY</h2>
       <table>
         <thead>
           <th>Date</th>
