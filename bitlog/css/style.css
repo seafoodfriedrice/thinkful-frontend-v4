@@ -1,0 +1,109 @@
+/* http://colorhunt.co/#d9dad7c24d2c3e4a611a2639
+  #d9dad7 Light Gray
+  #c24d2c Red Orange
+  #3e4a61 Medium Gray
+  #1a2639 Dark Gray
+  #fff07a Light Yellow
+*/
+
+body {
+  background-color: #eeeded;
+  font-family: Roboto, sans-serif;
+}
+
+/*
+  Header
+*/
+header {
+  margin: 0;
+  height: 110px;
+  text-align: center;
+  background-color: #1a2639;
+  background-position: center top 0px;
+  background-size: 344px;
+  background-repeat: no-repeat;
+}
+
+h1 {
+  margin: 0;
+  padding-top: 25px;
+  font-family: "Luckiest Guy", sans-serif;
+  font-size: 3em;
+  font-weight: 200;
+  color: #fff07a;
+  /* text-shadow: 3px 3px 0px #5f233f; */
+}
+
+.container {
+  margin: auto;
+  width: 760px;
+  padding-top: 48px;
+}
+
+section {
+  margin-bottom: 30px;
+  background-color: #fff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+/*
+  Dashboard
+*/
+section.chart {
+  margin-bottom: 10px;
+}
+
+.chart-line {
+  width: 760px;
+  height: 300px;
+}
+
+section.funds, section.exchange {
+  text-align: center;
+  padding: 32px;
+}
+
+section.funds {
+  width: 310px;
+  float: left;
+}
+
+section.exchange {
+  width: 310px;
+  float: right;
+}
+
+/*
+  Log Transaction
+*/
+section.log {
+  padding: 5px;
+}
+
+.log-date {
+  width: 90px;
+}
+
+.log-description {
+  width: 435px;
+}
+
+.log-currency {
+  width: 80px;
+}
+
+/*
+  Transaction History
+*/
+section.history {
+  padding: 10px 0;
+}
+
+table {
+  width: 100%;
+}
+
+td {
+  padding: 5px;
+  border-top: 1px solid black;
+}
