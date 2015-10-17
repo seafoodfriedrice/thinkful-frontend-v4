@@ -124,6 +124,18 @@ section.exchange {
   color: #3e4a61;
 }
 
+.info-exchange-refresh {
+  position: relative;
+  right: 30px;
+  float: right;
+  padding-top: 2px;
+}
+
+.info-exchange-refresh:hover {
+  cursor: pointer;
+  color: #c24d2c;
+}
+
 .info-exchange-loading {
   margin-top: -15px;
 }
