@@ -14,8 +14,7 @@ function getExchangeRate() {
     // Update Funds Remaining USD amount
     var usdFundsRemain = ($(".info-amount-btc").text() *
       $(".info-exchange-usd").text()).toFixed(2);
-    $(".info-amount-usd").hide().fadeIn(1000).
-    $(".info-amount-usd").text(usdFundsRemain);
+    $(".info-amount-usd").hide().fadeIn(1000).text(usdFundsRemain);
   })
   .fail(function(jqXHR, error, errorThrown){
     alert(error);
