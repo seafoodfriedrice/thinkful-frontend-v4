@@ -22,6 +22,21 @@ $(document).ready(function() {
     event.preventDefault();
   });
 
+  var endpoint = "https://api.bitcoinaverage.com/all";
+  var exchangeRates = $.ajax({
+    url: endpoint,
+    dataType: "json",
+    type: "GET",
+  })
+  .success(function(exchangeRates){
+    var usdRate = exchangeRates.USD.averages["24h_avg"];
+    $(".info-exchange-usd").text(usdRate);
+  })
+  .fail(function(jqXHR, error, errorThrown){
+    alert(error);
+  });
+
+
   $('.chart-line').highcharts({
     title: {
       text: 'Monthly Average Temperature',
