@@ -30,6 +30,8 @@ $(document).ready(function() {
   })
   .success(function(exchangeRates){
     var usdRate = exchangeRates.USD.averages["24h_avg"];
+    $(".info-exchange-loading").hide();
+    $(".info-exchange-rate").fadeIn(1000);
     $(".info-exchange-usd").text(usdRate);
   })
   .fail(function(jqXHR, error, errorThrown){

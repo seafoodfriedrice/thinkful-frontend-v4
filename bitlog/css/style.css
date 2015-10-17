@@ -124,6 +124,15 @@ section.exchange {
   color: #3e4a61;
 }
 
+.info-exchange-loading {
+  margin-top: -15px;
+}
+
+.info-exchange-rate {
+  display: none;
+}
+
+
 /*
   Log Transaction
 */
