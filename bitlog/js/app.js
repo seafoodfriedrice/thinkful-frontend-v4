@@ -1,4 +1,25 @@
-$(function () {
+$(document).ready(function() {
+
+  function logTransaction() {
+    var row = $('.templates .transaction-row').clone();
+
+    var fields = ["date", "description", "usd", "btc"];
+    $.each(fields, function(index, field) {
+      row.find('.transaction-' + field).text($(".log-" + field).val());
+    });
+
+    $.each($(".log-input"), function(index, value) {
+      $(value).val("");
+    });
+
+    return row;
+  }
+
+  $(".log-button").click(function() {
+    row = logTransaction();
+    $(".transactions").append(row);
+  });
+
   $('.chart-line').highcharts({
     title: {
       text: 'Monthly Average Temperature',
@@ -45,4 +66,5 @@ $(function () {
       data: [3.9, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6, 4.8]
     }]
   });
+
 });

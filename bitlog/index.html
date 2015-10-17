@@ -44,16 +44,16 @@
               placeholder="Date">
         <input class="log-input log-description" name="input" type="text"
               placeholder="Enter description here">
-        <input class="log-input log-currency" name="input" type="text"
+        <input class="log-input log-currency log-usd" name="input" type="text"
               placeholder="USD">
-        <input class="log-input log-currency" name="input" type="text"
+        <input class="log-input log-currency log-btc" name="input" type="text"
               placeholder="BTC">
         <div class="log-button">LOG</div>
       </div>
     </section>
     <section class="history">
       <h2 class="header">TRANSACTION HISTORY</h2>
-      <table>
+      <table class="transactions">
         <thead>
           <th>Date</th>
           <th>Description</th>
@@ -73,15 +73,19 @@
             <td>518.10</td>
             <td>2.0</td>
           </tr>
-          <tr class="hidden transaction-row">
-            <td class="transaction-date"></td>
-            <td class="transaction-description"></td>
-            <td class="transaction-usd"></td>
-            <td class="transaction-btc"></td>
-          </tr>
         </tbody>
       </table>
     </section>
+    <div class="templates hidden">
+      <table>
+        <tr class="transaction-row">
+          <td class="transaction-date"></td>
+          <td class="transaction-description"></td>
+          <td class="transaction-usd"></td>
+          <td class="transaction-btc"></td>
+        </tr>
+      </table>
+    </div>
   </div>
 </body>
 </html>
