@@ -53,6 +53,21 @@ $(document).ready(function() {
     getExchangeRate();
   });
 
+  // Update other currency amount when input changes
+  $(".log-usd, .log-btc").on("input", function() {
+    var exchangeRate = $(".info-exchange-usd").text();
+    if ($(this).attr('class').indexOf("log-btc") !== -1) {
+      var exchangeValue = exchangeRate * $(this).val();
+      var otherField = $(".log-usd");
+      var toFixedNum = 2;
+    } else {
+      var exchangeValue = $(this).val() / exchangeRate;
+      var otherField = $(".log-btc");
+      var toFixedNum = 5;
+    }
+    otherField.val(exchangeValue.toFixed(toFixedNum));
+  });
+
   $('.chart-line').highcharts({
     title: {
       text: 'Monthly Average Temperature',
