@@ -10,6 +10,12 @@ function getExchangeRate() {
     $(".info-exchange-loading").hide();
     $(".info-exchange-rate").fadeIn(1000);
     $(".info-exchange-usd").text(usdRate);
+
+    // Update Funds Remaining USD amount
+    var usdFundsRemain = ($(".info-amount-btc").text() *
+      $(".info-exchange-usd").text()).toFixed(2);
+    $(".info-amount-usd").hide().fadeIn(1000);
+    $(".info-amount-usd").text(usdFundsRemain);
   })
   .fail(function(jqXHR, error, errorThrown){
     alert(error);
