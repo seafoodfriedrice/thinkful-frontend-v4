@@ -148,11 +148,15 @@ section.log {
 }
 
 .log-date {
-  width: 90px;
+  width: 145px;
+}
+
+.log-description, .log-currency {
+  padding-bottom: 3px;
 }
 
 .log-description {
-  width: 360px;
+  width: 310px;
 }
 
 .log-currency {

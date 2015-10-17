@@ -40,15 +40,16 @@
     <section class="log">
       <h2 class="header">LOG TRANSACTION</h2>
       <div class="log-inputs">
-        <input class="log-input log-date" name="input" type="text"
-              placeholder="Date">
-        <input class="log-input log-description" name="input" type="text"
-              placeholder="Enter description here">
-        <input class="log-input log-currency log-usd" name="input" type="text"
-              placeholder="USD">
-        <input class="log-input log-currency log-btc" name="input" type="text"
-              placeholder="BTC">
-        <div class="log-button">LOG</div>
+        <form>
+          <input class="log-input log-date" name="input" type="date" required>
+          <input class="log-input log-description" name="input" type="text"
+                placeholder="Enter description here" required>
+          <input class="log-input log-currency log-usd" name="input"
+                type="number" placeholder="USD" required>
+          <input class="log-input log-currency log-btc" name="input"
+                type="number" placeholder="BTC" required>
+          <div class="log-button">LOG</div>
+        </form>
       </div>
     </section>
     <section class="history">
