@@ -1,4 +1,23 @@
+function getExchangeRate() {
+  var endpoint = "https://api.bitcoinaverage.com/all";
+  var exchangeRates = $.ajax({
+    url: endpoint,
+    dataType: "json",
+    type: "GET",
+  })
+  .success(function(exchangeRates){
+    var usdRate = exchangeRates.USD.averages["24h_avg"];
+    $(".info-exchange-loading").hide();
+    $(".info-exchange-rate").fadeIn(1000);
+    $(".info-exchange-usd").text(usdRate);
+  })
+  .fail(function(jqXHR, error, errorThrown){
+    alert(error);
+  });
+}
+
 $(document).ready(function() {
+  getExchangeRate();
 
   function logTransaction() {
     var row = $('.templates .transaction-row').clone();
@@ -22,22 +41,12 @@ $(document).ready(function() {
     event.preventDefault();
   });
 
-  var endpoint = "https://api.bitcoinaverage.com/all";
-  var exchangeRates = $.ajax({
-    url: endpoint,
-    dataType: "json",
-    type: "GET",
-  })
-  .success(function(exchangeRates){
-    var usdRate = exchangeRates.USD.averages["24h_avg"];
-    $(".info-exchange-loading").hide();
-    $(".info-exchange-rate").fadeIn(1000);
-    $(".info-exchange-usd").text(usdRate);
-  })
-  .fail(function(jqXHR, error, errorThrown){
-    alert(error);
+  // Refresh exchange rate on click()
+  $(".info-exchange-refresh").click(function() {
+    $(".info-exchange-rate").hide();
+    $(".info-exchange-loading").show();
+    getExchangeRate();
   });
-
 
   $('.chart-line').highcharts({
     title: {
