@@ -17,6 +17,7 @@ $(document).ready(function() {
 
   $("form").on("submit", function(event) {
     row = logTransaction();
+    $(row).hide().fadeIn(1000);
     $(".transactions").append(row);
     event.preventDefault();
   });
