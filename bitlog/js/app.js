@@ -15,9 +15,10 @@ $(document).ready(function() {
     return row;
   }
 
-  $(".log-button").click(function() {
+  $("form").on("submit", function(event) {
     row = logTransaction();
     $(".transactions").append(row);
+    event.preventDefault();
   });
 
   $('.chart-line').highcharts({

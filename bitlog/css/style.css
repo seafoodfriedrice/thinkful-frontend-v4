@@ -172,6 +172,7 @@ section.log {
   font-size: 1.2em;
   color: #d9dad7;
   background: #c24d2c;
+  border: 0;
   border-radius: 3px;
   -webkit-border-radius: 3;
      -moz-border-radius: 3;
