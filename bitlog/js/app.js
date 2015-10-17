@@ -11,7 +11,7 @@ function getExchangeRate() {
     $(".info-exchange-rate").fadeIn(1000);
     $(".info-exchange-usd").text(usdRate);
 
-    // Update Funds Remaining USD amount
+    // Update usd funds remaining when exchange rate is refreshed
     var usdFundsRemain = ($(".info-amount-btc").text() *
       $(".info-exchange-usd").text()).toFixed(2);
     $(".info-amount-usd").hide().fadeIn(1000).text(usdFundsRemain);
@@ -30,6 +30,20 @@ $(document).ready(function() {
     var fields = ["date", "description", "usd", "btc"];
     $.each(fields, function(index, field) {
       row.find('.transaction-' + field).text($(".log-" + field).val());
+    });
+
+    // Update btc and usd funds remaining when transaction is logged
+    $.each(["btc", "usd"], function(index, cur) {
+      var fundsRemaining = $('.info-amount-' + cur).text();
+      var fundsSpent = $('.log-' + cur).val();
+      var fundsDifference = fundsRemaining - fundsSpent;
+      if ($(this) === "btc") {
+        var toFixedNum = 8;
+      } else {
+        var toFixedNum = 2;
+      }
+      $('.info-amount-' + cur).hide().fadeIn(1000);
+      $('.info-amount-' + cur).text(fundsDifference.toFixed(toFixedNum));
     });
 
     $.each($(".log-input"), function(index, value) {
