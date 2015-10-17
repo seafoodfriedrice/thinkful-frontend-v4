@@ -45,9 +45,9 @@
           <input class="log-input log-description" name="input" type="text"
                 placeholder="Enter description here" required>
           <input class="log-input log-currency log-usd" name="input"
-                type="number" placeholder="USD" required>
+                type="number" step="0.01" min="0" placeholder="USD" required>
           <input class="log-input log-currency log-btc" name="input"
-                type="number" placeholder="BTC" required>
+                type="number" step="0.00001" min="0"placeholder="BTC" required>
           <button class="log-button" name="log-button"
                   type="submit">LOG</button>
         </form>
