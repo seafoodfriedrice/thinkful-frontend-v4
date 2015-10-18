@@ -54,9 +54,17 @@ $(document).ready(function() {
   }
 
   $("form").on("submit", function(event) {
+    // Add values from log transaction to
+    // transaction history table
     row = logTransaction();
     $(row).hide().fadeIn(1000);
     $(".transactions").append(row);
+
+    // Add plot point to chart
+    btcSpent = parseFloat($(".transactions .transaction-btc").last().text());
+    btcDate = $(".transactions .transaction-date").last().text();
+    updateChart($('.chart-line').highcharts(), btcDate, btcSpent);
+
     event.preventDefault();
   });
 
@@ -83,9 +91,10 @@ $(document).ready(function() {
   });
 
   fundsRemaining = parseFloat($('.info-amount-btc').text());
+  //var chart = $('.chart-line').highcharts();
   $('.chart-line').highcharts({
     title: {
-      text: 'Bitcoins Spent Over Time',
+      text: 'Bitcoins Remaining Over Time',
       x: -20
     },
     xAxis: {
@@ -109,5 +118,12 @@ $(document).ready(function() {
       color: '#c24d2c'
     }]
   });
+
+  function updateChart(chart, xBtcDate, yBtcSpent) {
+    plotPoints = chart.series[0].yData;
+    lastAmount = plotPoints[plotPoints.length - 1];
+    btcRemaining = lastAmount - yBtcSpent;
+    chart.series[0].addPoint([xBtcDate, parseFloat(btcRemaining.toFixed(5))]);
+  }
 
 });
