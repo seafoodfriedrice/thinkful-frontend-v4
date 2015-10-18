@@ -90,19 +90,31 @@ $(document).ready(function() {
     otherField.val(exchangeValue.toFixed(toFixedNum));
   });
 
-  fundsRemaining = parseFloat($('.info-amount-btc').text());
+  btcFundsRemaining = parseFloat($('.info-amount-btc').text());
   //var chart = $('.chart-line').highcharts();
   $('.chart-line').highcharts({
     chart: {
       spacingTop: 38,
       spacingBottom:32,
       spacingLeft: 32,
-      spacingRight: 48
+      spacingRight: 48,
+      style: {
+        fontFamily: 'Roboto'
+      }
     },
     title: {
-      text: 'Bitcoins Remaining Over Time',
+      text: 'BITCOINS REMAINING OVER TIME',
       x: 20,
-      y: 4
+      y: 4,
+      style: {
+        color: '#c24d2c'
+      }
+    },
+    legend: {
+      itemStyle: {
+        color: '#3e4a61',
+        fontWeight: "100"
+      }
     },
     xAxis: {
       categories: ['Today']
@@ -120,8 +132,8 @@ $(document).ready(function() {
       valueSuffix: ' BTC'
     },
     series: [{
-      name: 'Funds Remaining',
-      data: [fundsRemaining],
+      name: 'Bitcoins Remaining',
+      data: [btcFundsRemaining],
       color: '#c24d2c'
     }]
   });
