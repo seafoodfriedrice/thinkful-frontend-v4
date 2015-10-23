@@ -4,7 +4,6 @@ bitlog.app = (function($, window, document) {
 
   // Functions
   var init,
-      getExchangeRate,
       addTransactionRowSubmitHandler,
       loadExchangeRateClickHandler,
       currencyInputHandler;
@@ -125,7 +124,7 @@ bitlog.app = (function($, window, document) {
     /*
      * TODO: Not processing correctly?
      */
-    updateChart($bitcoinChart.highcharts(), btcDate, btcSpent);
+    updateChart(btcDate, btcSpent);
 
     event.preventDefault();
   };
@@ -204,9 +203,13 @@ bitlog.app = (function($, window, document) {
         color: '#c24d2c'
       }]
     });
-  }
+  };
 
-  updateChart = function(chart, xBtcDate, yBtcSpent) {
+  function updateChart(xBtcDate, yBtcSpent) {
+    /*
+     * TODO: How to use .chart-line outside of function
+     */
+    var chart = $(".chart-line").highcharts();
     plotPoints = chart.series[0].yData;
     lastAmount = plotPoints[plotPoints.length - 1];
     btcRemaining = lastAmount - yBtcSpent;
