@@ -58,7 +58,7 @@ bitlog.app = (function($, window, document) {
 
   };
 
-  function getExchangeRate() {
+  getExchangeRate = function() {
     var endpoint = "https://api.bitcoinaverage.com/all";
     var exchangeRates = $.ajax({
       url: endpoint,
@@ -206,7 +206,7 @@ bitlog.app = (function($, window, document) {
     });
   }
 
-  function updateChart(chart, xBtcDate, yBtcSpent) {
+  updateChart = function(chart, xBtcDate, yBtcSpent) {
     plotPoints = chart.series[0].yData;
     lastAmount = plotPoints[plotPoints.length - 1];
     btcRemaining = lastAmount - yBtcSpent;
