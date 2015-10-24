@@ -111,6 +111,18 @@ bitlog.app = (function($, window, document) {
     return row;
   };
 
+  updateChart = function(xBtcDate, yBtcSpent) {
+    /*
+     * TODO: How to use .chart-line outside of function
+     */
+    var chart = $(".chart-line").highcharts();
+    plotPoints = chart.series[0].yData;
+    lastAmount = plotPoints[plotPoints.length - 1];
+    btcRemaining = lastAmount - yBtcSpent;
+    chart.series[0].addPoint([xBtcDate, parseFloat(btcRemaining.toFixed(5))]);
+  };
+
+
   addTransactionRowSubmitHandler = function() {
     // Add values from log transaction to
     // transaction history table
@@ -203,17 +215,6 @@ bitlog.app = (function($, window, document) {
         color: '#c24d2c'
       }]
     });
-  };
-
-  function updateChart(xBtcDate, yBtcSpent) {
-    /*
-     * TODO: How to use .chart-line outside of function
-     */
-    var chart = $(".chart-line").highcharts();
-    plotPoints = chart.series[0].yData;
-    lastAmount = plotPoints[plotPoints.length - 1];
-    btcRemaining = lastAmount - yBtcSpent;
-    chart.series[0].addPoint([xBtcDate, parseFloat(btcRemaining.toFixed(5))]);
   };
 
   return {
