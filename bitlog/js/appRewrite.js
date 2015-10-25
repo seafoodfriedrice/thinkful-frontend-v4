@@ -3,12 +3,15 @@ var bitlog = bitlog || {};
 bitlog.app = (function($, window, document) {
 
   // Functions
+  /*
   var init,
       addTransactionRowSubmitHandler,
       loadExchangeRateClickHandler,
       currencyInputHandler;
+      */
 
   // Cached DOM variables
+/*
   var $exchangeRateLoader,
       $exchangeRate,
       $exchangeRateUsd,
@@ -24,6 +27,7 @@ bitlog.app = (function($, window, document) {
       $transactionTableBtc,
       $transactionTableDate,
       $bitcoinChart;
+      */
 
   init = function() {
     cacheDomVariables();
@@ -45,9 +49,7 @@ bitlog.app = (function($, window, document) {
     $logInputUsd = $(".log-usd");
     $templateTransactionRow = $(".templates .transaction-row");
     $transactionsTable = $(".transactions");
-    $transactionTableBtc = $(".transactions .transaction-btc");
-    $transactionTableDate = $(".transactions .transaction-date");
-    $bitcoinChart = $(".chart-line");
+    $chart = $(".chart-line");
   };
 
   assignEventHandlers = function() {
@@ -70,11 +72,10 @@ bitlog.app = (function($, window, document) {
       $exchangeRate.fadeIn(1000);
       $exchangeRateUsd.text(usdRate);
 
-      // Update usd funds remaining when exchange rate is refreshed
-      var usdFundsRemain = (
-        $fundsAmountBtc.text() * $exchangeRateUsd.text()
-      ).toFixed(2);
-      $fundsAmountUsd.hide().fadeIn(1000).text(usdFundsRemain);
+      // Update usd funds remaining when
+      // exchange rate is refreshed
+      var usdFundsRemain = $fundsAmountBtc.text() * $exchangeRateUsd.text()
+      $fundsAmountUsd.hide().fadeIn(1000).text(usdFundsRemain.toFixed(2));
     })
     .fail(function(jqXHR, error, errorThrown){
       alert(error);
@@ -90,7 +91,8 @@ bitlog.app = (function($, window, document) {
       row.find('.transaction-' + field).text($(".log-" + field).val());
     });
 
-    // Update btc and usd funds remaining when transaction is logged
+    // Update btc and usd funds remaining
+    // when transaction is logged
     $.each(["btc", "usd"], function(index, cur) {
       var fundsRemaining = $('.info-amount-' + cur).text();
       var fundsSpent = $('.log-' + cur).val();
@@ -100,42 +102,36 @@ bitlog.app = (function($, window, document) {
       } else {
         var toFixedNum = 2;
       }
-      $('.info-amount-' + cur).hide().fadeIn(1000);
-      $('.info-amount-' + cur).text(fundsDifference.toFixed(toFixedNum));
+      fundsDifference = fundsDifference.toFixed(toFixedNum);
+      $('.info-amount-' + cur).hide().fadeIn(1000).text(fundsDifference);
     });
 
-    $.each($(".log-input"), function(index, value) {
-      $(value).val("");
-    });
+    $logInputAll.val("");
 
     return row;
   };
 
   updateChart = function(xBtcDate, yBtcSpent) {
-    /*
-     * TODO: How to use .chart-line outside of function
-     */
-    var chart = $(".chart-line").highcharts();
-    plotPoints = chart.series[0].yData;
-    lastAmount = plotPoints[plotPoints.length - 1];
-    btcRemaining = lastAmount - yBtcSpent;
+    var chart = $chart.highcharts();
+    var plotPoints = chart.series[0].yData;
+    var lastAmount = plotPoints[plotPoints.length - 1];
+    var btcRemaining = lastAmount - yBtcSpent;
     chart.series[0].addPoint([xBtcDate, parseFloat(btcRemaining.toFixed(5))]);
   };
 
 
   addTransactionRowSubmitHandler = function() {
-    // Add values from log transaction to
-    // transaction history table
+    // Add values from log transaction
+    // to transaction history table
     var row = getTransactionRow();
     $(row).hide().fadeIn(1000);
     $transactionsTable.append(row);
 
     // Add plot point to chart
+    var $transactionTableBtc = $(".transactions .transaction-btc");
+    var $transactionTableDate = $(".transactions .transaction-date");
     var btcSpent = parseFloat($transactionTableBtc.last().text());
     var btcDate = $transactionTableDate.last().text();
-    /*
-     * TODO: Not processing correctly?
-     */
     updateChart(btcDate, btcSpent);
 
     event.preventDefault();
@@ -163,14 +159,9 @@ bitlog.app = (function($, window, document) {
     otherField.val(exchangeValue.toFixed(toFixedNum));
   };
 
-  /*
-   * TODO: How to properly cache this variable?
-   */
-  //var btcFundsRemaining = parseFloat($fundsAmountBtc.text());
-  //var btcFundsRemaining = parseFloat($(".info-amount-btc").text());
-  var btcFundsRemaining = parseFloat(20.00);
   displayChart = function() {
-    $(".chart-line").highcharts({
+    var btcRemaining = $fundsAmountBtc.text();
+    $chart.highcharts({
       chart: {
         spacingTop: 38,
         spacingBottom:32,
@@ -211,7 +202,7 @@ bitlog.app = (function($, window, document) {
       },
       series: [{
         name: 'Bitcoins Remaining',
-        data: [btcFundsRemaining],
+        data: [parseFloat(btcRemaining)],
         color: '#c24d2c'
       }]
     });
