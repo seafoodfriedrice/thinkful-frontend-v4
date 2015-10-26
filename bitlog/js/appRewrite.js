@@ -3,15 +3,12 @@ var bitlog = bitlog || {};
 bitlog.app = (function($, window, document) {
 
   // Functions
-  /*
   var init,
       addTransactionRowSubmitHandler,
       loadExchangeRateClickHandler,
       currencyInputHandler;
-      */
 
   // Cached DOM variables
-/*
   var $exchangeRateLoader,
       $exchangeRate,
       $exchangeRateUsd,
@@ -27,7 +24,6 @@ bitlog.app = (function($, window, document) {
       $transactionTableBtc,
       $transactionTableDate,
       $bitcoinChart;
-      */
 
   init = function() {
     cacheDomVariables();
